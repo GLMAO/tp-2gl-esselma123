@@ -1,4 +1,8 @@
-package com.polytech;
+package com.polytech.tp;
+
+import com.polytech.tp.Cours;
+import com.polytech.tp.CoursBuilder;
+
 
 /**
  * Hello world!
