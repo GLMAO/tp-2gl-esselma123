@@ -1,4 +1,4 @@
-mon code respecte les principes SOLID en particulier Open/Close grâce au Decorator Pattern 
+
 
 S – Single Responsibility  --> respecté
 - CoursBuilder → ne fait que construire un Cours
@@ -16,6 +16,8 @@ I– Interface Segregation --> Respecté
 - ICours ne contient que 2 méthodes 
 - Observer ne contient que update(String) --> pas de méthodes inutiles
 
-D – Dependency Inversion --> globalement respecté
-- GestionnaireEmploiDuTemps dépend de l’interface Observer, pas des classes concrètes Etudiant ou Responsable → bon DIP
+D – Dependency Inversion --> petite faiblesse (respécter partiellement)
+- Dans CoursDecorator, tu as un attribut private ICours coursDecore --> c’est parfait
+- Mais dans GestionnaireEmploiDuTemps, j'utilise new Etudiant(...) et new Responsable(...) directement → dépendance vers classes concrètes au lieu d’injecter via interface.
+
 
