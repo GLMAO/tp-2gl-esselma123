@@ -1,0 +1,21 @@
+mon code respecte les principes SOLID en particulier Open/Close grâce au Decorator Pattern 
+
+S – Single Responsibility  --> respecté
+- CoursBuilder → ne fait que construire un Cours
+- CoursEnLigne → ne fait qu’ajouter le texte "(En ligne)"
+- GestionnaireEmploiDuTemps --> gère la liste + notifie
+--> Chaque classe a une seule raison de changer
+
+O – Open/Closed --> respecté 
+– je peux ajouter indéfiniment de nouveaux types de cours (CoursAvecTD, CoursAvecExamen,...) sans toucher à la classe Cours grâce au Decorator 
+
+L – Liskov Substitution --> Respecté 
+- Tous les décorateurs (CoursEnLigne, CoursEnAnglais, …) peuvent remplacer un ICours partout sans casser le programme
+
+I– Interface Segregation --> Respecté
+- ICours ne contient que 2 méthodes 
+- Observer ne contient que update(String) --> pas de méthodes inutiles
+
+D – Dependency Inversion --> globalement respecté
+- GestionnaireEmploiDuTemps dépend de l’interface Observer, pas des classes concrètes Etudiant ou Responsable → bon DIP
+
